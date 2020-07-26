@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zhihu/components/nav_bar.dart';
 
+import 'home/home_card_widget.dart';
+import 'home/home_tab_header_delegate.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -15,21 +18,18 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     _homeScrollController.addListener(() {
       if (_homeScrollController.offset < _homeSearchHeight) {
-        if(_homeScrollController.offset==0){
+        if (_homeScrollController.offset == 0) {
           setState(() {
-            _homeSearchBarOpacity =
-               1;
+            _homeSearchBarOpacity = 1;
           });
-        }else{
+        } else {
           setState(() {
             _homeSearchBarOpacity =
-              1-  _homeScrollController.offset / _homeSearchHeight;
+                1 - _homeScrollController.offset / _homeSearchHeight;
           });
         }
-
-
       }
-      print(_homeSearchBarOpacity);
+//      print(_homeSearchBarOpacity);
     });
     super.initState();
   }
@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         InkWell(
+
           child: Column(
             children: [
               Expanded(
@@ -65,23 +66,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ];
                   },
                   body: Container(
-                    child: Column(
-                      children: [
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                        Text("12354"),
-                      ],
-                    ),
+                    color: Color.fromARGB(255, 246  , 246, 246),
+                    child: ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
+                          return HomeCardWidget();
+                        }),
                   ),
                 ),
               )
@@ -115,28 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class HomeTabHeaderDelegate extends SliverPersistentHeaderDelegate {
-  final Widget tabBar;
 
-  HomeTabHeaderDelegate(this.tabBar);
 
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return tabBar;
-  }
 
-  @override
-  // TODO: implement maxExtent
-  double get maxExtent => 100;
-
-  @override
-  // TODO: implement minExtent
-  double get minExtent => 100;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    // TODO: implement shouldRebuild
-    return false;
-  }
-}
