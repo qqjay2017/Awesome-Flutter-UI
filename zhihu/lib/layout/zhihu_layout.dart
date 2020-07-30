@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/config/router_config.dart';
+import 'package:zhihu/screen/search/search_screen.dart';
+
+/// 总布局
 
 class MyApp extends StatefulWidget {
   @override
@@ -12,10 +16,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Container(
       child: MaterialApp(
+        theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
             return RootWidget();
           },
+          '/search':(Build){
+            return SearchScreen();
+          }
         },
         initialRoute: '/',
       ),
@@ -37,22 +45,19 @@ class _RootWidgetState extends State<RootWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: true,
-      bottom: false,
-      child: Scaffold(
-
-        body: RouterConfig.getBottomBarRoute(_currentIndex).screen,
-        bottomNavigationBar: NavBarWidget(
-          currentIndex: _currentIndex,
-          onTapCallback: (index) {
-            if (_currentIndex != index) {
-              setState(() {
-                _currentIndex = index;
-              });
-            }
-          },
-        ),
+    return Scaffold(
+      body: SafeArea(
+        child: RouterConfig.getBottomBarRoute(_currentIndex).screen,
+      ),
+      bottomNavigationBar: NavBarWidget(
+        currentIndex: _currentIndex,
+        onTapCallback: (index) {
+          if (_currentIndex != index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          }
+        },
       ),
     );
   }
