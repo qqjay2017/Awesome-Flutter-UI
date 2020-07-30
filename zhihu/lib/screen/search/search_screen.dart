@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:zhihu/components/nav_bar.dart';
+import 'package:zhihu/screen/search/search_hot_card.dart';
+import 'package:zhihu/screen/search/search_page_top_bar.dart';
 import 'package:zhihu/screen/search/search_tab_header_delegate.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -26,14 +29,50 @@ class _SearchScreenState extends State<SearchScreen> {
                 floating: true,
                 delegate: SearchTabHeaderDelegate(SearchPageTopBar()),
               ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate((ctx,index){
+                  return SizedBox(height: 30,);
+                },childCount: 1),
+              ),
+
               SliverGrid(
                   delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
-                    return Text("123");
+                    return SearchHotCard(index);
                   }, childCount: 8),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                  ))
+                    childAspectRatio: 4
+                  )),
+              SliverList(
+                  delegate:SliverChildBuilderDelegate(
+                      (BuildContext context, int index){
+                        return
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border(bottom:BorderSide(color: Color(0xffcdcaca)) )
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 30,bottom: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+
+                                children: [
+                                  Text("更多热搜内容",style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xff3891df)
+                                  ),),
+                                  Icon(Icons.chevron_right, color: Color(0xff3891df),size: 14,)
+                                ],
+
+                              ),
+                            ),
+                          );
+                      },
+                    childCount: 1
+                  )
+              )
+
             ],
           ),
         ),
@@ -42,80 +81,4 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 }
 
-class SearchPageTopBar extends StatefulWidget {
-  SearchPageTopBar({
-    Key key,
-  }) : super(key: key);
 
-  @override
-  _SearchPageTopBarState createState() => _SearchPageTopBarState();
-}
-
-class _SearchPageTopBarState extends State<SearchPageTopBar>
-    with TickerProviderStateMixin {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 16, right: 16),
-            child: Container(
-              height: 32,
-              decoration: BoxDecoration(
-                  color: Color(0xffebebeb),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                children: [
-                  InkWell(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: Icon(
-                          Icons.arrow_back,
-                          size: 14,
-                          color: Color(0xff4c4c4c),
-                        ),
-                      )),
-                  Text(
-                    "搜索知乎内容",
-                    style: TextStyle(fontSize: 14, color: Color(0Xffcfcfcf)),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        Container(
-          padding: const EdgeInsets.only(top: 20),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border(bottom: BorderSide(color: Color(0XFFdad8d8)))),
-          child: TabBar(
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorColor: Color(0xff222222),
-              labelColor: Color(0xff030303),
-              labelStyle: TextStyle(fontSize: 14),
-              unselectedLabelColor: Color(0xffa4a4a4),
-              unselectedLabelStyle: TextStyle(fontSize: 14),
-              labelPadding:
-                  const EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 12),
-              controller: TabController(length: 7, vsync: this),
-              onTap: (int index) {},
-              tabs: <Widget>[
-                Text("热搜"),
-                Text("数码"),
-                Text("影视"),
-                Text("科学"),
-                Text("体育"),
-                Text("游戏"),
-                Text("百科"),
-              ]),
-        )
-      ],
-    );
-  }
-}
