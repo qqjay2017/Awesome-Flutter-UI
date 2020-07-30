@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d58916f4-6924-436b-9123-bbd06596bca8" name="Default Changelist" comment="" />
+    <list default="true" id="d58916f4-6924-436b-9123-bbd06596bca8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/zhihu/assets/avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/area1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/area2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/area3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/bell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/bottle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/breakfast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/burned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/dinner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/eaten.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/fitness_app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/lunch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/runner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/snack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_1s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_2s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_3s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/assets/fitness_app/tab_4s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/lib/screen/home/home_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zhihu/lib/screen/home/home_card_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zhihu/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/zhihu/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +49,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1fCjxihfQTjjcZYPBEUWpBeoAN4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
@@ -70,11 +107,39 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595729216222</updated>
-      <workItem from="1595729218260" duration="20007000" />
+      <workItem from="1595729218260" duration="20109000" />
+      <workItem from="1595806077027" duration="1954000" />
+      <workItem from="1595978045988" duration="2646000" />
     </task>
+    <task id="LOCAL-00001" summary="卡片布局开始">
+      <created>1595807898288</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595807898288</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="卡片布局开始" />
+    <option name="LAST_COMMIT_MESSAGE" value="卡片布局开始" />
   </component>
 </project>
