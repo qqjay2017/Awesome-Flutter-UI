@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HomeTabHeaderDelegate extends SliverPersistentHeaderDelegate {
+class SearchTabHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Widget tabBar;
 
-  HomeTabHeaderDelegate(this.tabBar);
+  SearchTabHeaderDelegate(this.tabBar);
 
   @override
   Widget build(
@@ -15,11 +15,11 @@ class HomeTabHeaderDelegate extends SliverPersistentHeaderDelegate {
   /// 偏移的尺寸
   @override
   // TODO: implement maxExtent
-  double get maxExtent => 40;
+  double get maxExtent => 100;
 
   @override
   // TODO: implement minExtent
-  double get minExtent => 40;
+  double get minExtent => 100;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {

@@ -27,4 +27,12 @@ class AliIcons {
   static const IconData nav_find_full = const AliIconData(0xe61c);
   static const IconData nav_notif_full = const AliIconData(0xe61a);
   static const IconData nav_my_full = const AliIconData(0xe61e);
+
+
+  static const IconData home_search_add = const AliIconData(0xe61f);
+  static const IconData home_card_agree = const AliIconData(0xe620);
+  static const IconData home_card_message = const AliIconData(0xe621);
+
+
+
 }

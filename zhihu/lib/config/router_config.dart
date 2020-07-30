@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zhihu/iconfont/AliIcons.dart';
 import 'package:zhihu/screen/find_screen.dart';
-import 'package:zhihu/screen/home_screen.dart';
+import 'package:zhihu/screen/home/home_screen.dart';
 import 'package:zhihu/screen/huiyuan_screen.dart';
 import 'package:zhihu/screen/my_screen.dart';
 import 'package:zhihu/screen/notif_screen.dart';

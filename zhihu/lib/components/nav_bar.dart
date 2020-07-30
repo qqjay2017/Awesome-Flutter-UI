@@ -1,7 +1,8 @@
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:zhihu/config/router_config.dart';
 import 'package:zhihu/iconfont/AliIcons.dart';
+
+/// 底部的菜单栏
 
 class NavBarWidget extends StatefulWidget {
   const NavBarWidget({Key key, this.currentIndex, this.onTapCallback})
