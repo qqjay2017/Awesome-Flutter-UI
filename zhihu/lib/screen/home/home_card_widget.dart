@@ -14,7 +14,7 @@ class HomeCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-
+          Navigator.of(context).pushNamed("/question",arguments:"123");
       },
       child: Column(
         children: [

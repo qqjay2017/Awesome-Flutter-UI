@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/config/router_config.dart';
+import 'package:zhihu/screen/answer/answer_screen.dart';
 import 'package:zhihu/screen/search/search_screen.dart';
 import 'package:zhihu/utils/screen_util.dart';
 
@@ -25,8 +26,10 @@ class _MyAppState extends State<MyApp> {
           '/': (BuildContext context) {
             return RootWidget();
           },
-          '/search':(Build){
+          '/search':(BuildContext context){
             return SearchScreen();
+          },'/question':(BuildContext context){
+            return AnswerToQuestion();
           }
         },
         initialRoute: '/',
