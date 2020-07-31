@@ -4,6 +4,7 @@ import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/screen/search/search_hot_card.dart';
 import 'package:zhihu/screen/search/search_page_top_bar.dart';
 import 'package:zhihu/screen/search/search_tab_header_delegate.dart';
+import 'package:zhihu/utils/screen_util.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -19,19 +20,20 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.initialize(context);
     return Container(
       child: Scaffold(
         body: SafeArea(
             child: Column(
           children: [
             SearchPageTopBar(),
-
             Expanded(
               child: CustomScrollView(
                 slivers: <Widget>[
                   SliverToBoxAdapter(
-                      child:SizedBox(height: 30,)
-                  ),
+                      child: SizedBox(
+                    height: 30,
+                  )),
                   SliverGrid(
                       delegate: SliverChildBuilderDelegate(
                           (BuildContext context, int index) {
@@ -70,8 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             )
           ],
-        )
-            ),
+        )),
       ),
     );
   }

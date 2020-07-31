@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:zhihu/extens/int_fit.dart';
+
 class SearchPageTopBar extends StatefulWidget {
   SearchPageTopBar({
     Key key,
@@ -18,11 +20,11 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
         Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.only(top:12,left: 16, right: 16),
+            padding:  EdgeInsets.only(top:18.rpx,left: 16.rpx, right: 16.rpx),
             child: Container(
-              height: 32,
+              height: 58.rpx,
               decoration: BoxDecoration(
-                  color: Color(0xffebebeb),
+                  color: Color(0xffe6e6e6),
                   borderRadius: BorderRadius.circular(10)),
               child: Row(
                 children: [
@@ -34,13 +36,13 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
                         padding: const EdgeInsets.only(left: 20, right: 20),
                         child: Icon(
                           Icons.arrow_back,
-                          size: 14,
+                          size: 34.rpx,
                           color: Color(0xff4c4c4c),
                         ),
                       )),
                   Text(
                     "搜索知乎内容",
-                    style: TextStyle(fontSize: 14, color: Color(0Xffcfcfcf)),
+                    style: TextStyle(fontSize: 30.rpx, color: Color(0xFFb3b3b3)),
                   )
                 ],
               ),
@@ -48,7 +50,7 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
           ),
         ),
         Container(
-          padding: const EdgeInsets.only(top: 20),
+          padding:  EdgeInsets.only(top: 20,left: 40.rpx,right: 40.rpx),
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border(bottom: BorderSide(color: Color(0XFFdad8d8)))),
@@ -60,7 +62,7 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
               unselectedLabelColor: Color(0xffa4a4a4),
               unselectedLabelStyle: TextStyle(fontSize: 14),
               labelPadding:
-              const EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 12),
+               EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 12),
               controller: TabController(length: 7, vsync: this),
               onTap: (int index) {},
               tabs: <Widget>[

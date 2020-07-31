@@ -1,11 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyrefresh/easy_refresh.dart';
 
 import 'package:zhihu/iconfont/AliIcons.dart';
 import 'package:zhihu/screen/home/homePageViewList.dart';
+import 'package:zhihu/utils/screen_util.dart';
 
 import 'home_tab_header_delegate.dart';
+
+import 'package:zhihu/extens/int_fit.dart';
 
 /// 首页
 
@@ -53,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.initialize(context);
     return NestedScrollView(
       floatHeaderSlivers: false,
       dragStartBehavior: DragStartBehavior.start,
@@ -99,13 +102,13 @@ class _HomeScreenState extends State<HomeScreen>
     return Opacity(
       opacity: _homeSearchBarOpacity,
       child: Container(
-        decoration: BoxDecoration(color: Colors.white),
+//        decoration: BoxDecoration(color: Colors.white),
         height: _homeSearchHeight,
         child: Padding(
-          padding: const EdgeInsets.only(
-            left: 16,
-            top: 10,
-            right: 18,
+          padding: EdgeInsets.only(
+            left: 30.rpx,
+            top: 18.rpx,
+            right: 30.rpx,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -113,37 +116,29 @@ class _HomeScreenState extends State<HomeScreen>
             children: [
               Expanded(
                 child: InkWell(
-
-
-                  onTap: (){
+                  onTap: () {
                     Navigator.of(context).pushNamed('/search');
                   },
-                  child: Container(
-                    height: 30,
+                  child: Ink(
+                    padding: EdgeInsets.only(left: 34.rpx, right: 34.rpx),
+                    height: 54.rpx,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xFFf6f6f6)),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                        borderRadius: BorderRadius.all(Radius.circular(20.rpx)),
+                        color: Color(0xFFe6e6e6)),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 18.0, right: 18),
-                              child: Icon(
-                                Icons.search,
-                                size: 18,
-                                color: Color(0xFFb3b3b3),
-                              ),
-                            ),
-                            Text(
-                              "河南高考分数线公布",
-                              style: TextStyle(
-                                  fontSize: 16, color: Color(0xFFb3b3b3)),
-                            )
-                          ],
+                        Icon(
+                          Icons.search,
+                          size: 28.rpx,
+                          color: Color(0xFFb3b3b3),
                         ),
+                        SizedBox(width: 33.rpx,),
+                        Text(
+                          "河南高考分数线公布",
+                          style: TextStyle(
+                              fontSize: 28.rpx, color: Color(0xFFb3b3b3)),
+                        )
                       ],
                     ),
                   ),

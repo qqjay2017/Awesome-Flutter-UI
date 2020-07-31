@@ -26,15 +26,11 @@ class _guanZhuWidgetState extends State<guanZhuWidget> {
         return Future.delayed(Duration(seconds: 2));
       },
       child: Container(
-        color: Color.fromARGB(255, 246, 246, 246),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1, childAspectRatio: 1.674),
-          itemBuilder: (ctx, index) {
-            return HomeCardWidget();
-          },
-          itemCount: 30,
-        ),
+//        color: Color.fromARGB(255, 246, 246, 246),
+        child:ListView.builder(
+            itemBuilder: (ctx,index){
+          return HomeCardWidget();
+        },itemCount: 30,),
       ),
     );
   }

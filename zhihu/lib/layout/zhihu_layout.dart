@@ -3,6 +3,7 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/config/router_config.dart';
 import 'package:zhihu/screen/search/search_screen.dart';
+import 'package:zhihu/utils/screen_util.dart';
 
 /// 总布局
 
@@ -14,9 +15,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+
     return Container(
       child: MaterialApp(
-        theme: ThemeData(appBarTheme: AppBarTheme(color: Colors.white)),
+        theme: ThemeData(
+            backgroundColor:Colors.white,
+            appBarTheme: AppBarTheme(color: Colors.white)),
         routes: <String, WidgetBuilder>{
           '/': (BuildContext context) {
             return RootWidget();
