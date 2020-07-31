@@ -12,29 +12,29 @@ class guanZhuWidget extends StatefulWidget {
 }
 
 class _guanZhuWidgetState extends State<guanZhuWidget> {
-
-
   @override
   void initState() {
-
     // TODO: implement initState
     super.initState();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-        displacement:20,
-        onRefresh:(){
-         return  Future.delayed(Duration(seconds: 2));
-        },
+      displacement: 20,
+      onRefresh: () {
+        return Future.delayed(Duration(seconds: 2));
+      },
       child: Container(
         color: Color.fromARGB(255, 246, 246, 246),
-        child: ListView.builder(itemBuilder: (BuildContext context, int index) {
-          return HomeCardWidget();
-        }),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1, childAspectRatio: 1.674),
+          itemBuilder: (ctx, index) {
+            return HomeCardWidget();
+          },
+          itemCount: 30,
+        ),
       ),
     );
   }
