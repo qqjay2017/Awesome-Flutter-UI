@@ -22,7 +22,9 @@ class _SearchScreenState extends State<SearchScreen> {
     return Container(
       child: Scaffold(
         body: SafeArea(
-          child: CustomScrollView(
+          child:
+
+          CustomScrollView(
             slivers: [
               SliverPersistentHeader(
                 pinned: true,
