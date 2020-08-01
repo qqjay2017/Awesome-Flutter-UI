@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:zhihu/extens/int_fit.dart';
+
 class SearchHotCard extends StatelessWidget {
   const SearchHotCard(
       int index ,{
@@ -18,7 +20,7 @@ class SearchHotCard extends StatelessWidget {
         children: [
           Text(index.toString(),style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 16,
+              fontSize: 24.rpx,
               color: index>3?Color(0xffc0c0c0):Color(0xffeea030),
               height: 1.4
           ),),
@@ -28,12 +30,12 @@ class SearchHotCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text('花儿乐队重组',style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 24.rpx,
                     color: Color(0xff363636),
-                    height: 1.4
                 ),),
+                SizedBox(height: 6.rpx,),
                 Text('主唱不再是大张伟',style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 22.rpx,
                   color: Color(0xffa5a5a5),
 
                 ),),
