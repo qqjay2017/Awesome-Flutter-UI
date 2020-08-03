@@ -15,11 +15,11 @@ class SearchTabHeaderDelegate extends SliverPersistentHeaderDelegate {
   /// 偏移的尺寸
   @override
   // TODO: implement maxExtent
-  double get maxExtent => 100;
+  double get maxExtent => 120;
 
   @override
   // TODO: implement minExtent
-  double get minExtent => 100;
+  double get minExtent => 120;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
