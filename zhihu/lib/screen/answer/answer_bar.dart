@@ -20,7 +20,9 @@ class AnswerBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TransparentIconButton(
-            onPressed:(){},
+            onPressed:(){
+              Navigator.of(context).pop();
+            },
             icon: Icon(
               Icons.arrow_back,
             ),

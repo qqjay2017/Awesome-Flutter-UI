@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/config/router_config.dart';
+import 'package:zhihu/route/on_generate_route.dart';
 import 'package:zhihu/screen/answer/answer_screen.dart';
 import 'package:zhihu/screen/search/search_screen.dart';
 import 'package:zhihu/utils/screen_util.dart';
@@ -22,17 +23,18 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
             backgroundColor:Colors.white,
             appBarTheme: AppBarTheme(color: Colors.white)),
-        routes: <String, WidgetBuilder>{
-          '/': (BuildContext context) {
-            return RootWidget();
-          },
-          '/search':(BuildContext context){
-            return SearchScreen();
-          },'/question':(BuildContext context){
-            return AnswerToQuestion();
-          }
-        },
-        initialRoute: '/',
+//        routes: <String, WidgetBuilder>{
+//          '/': (BuildContext context) {
+//            return RootWidget();
+//          },
+//          '/search':(BuildContext context){
+//            return SearchScreen();
+//          },'/question':(BuildContext context){
+//            return AnswerToQuestion();
+//          }
+//        },
+        initialRoute: '/home',
+        onGenerateRoute: onGenerateRoute,
       ),
     );
   }

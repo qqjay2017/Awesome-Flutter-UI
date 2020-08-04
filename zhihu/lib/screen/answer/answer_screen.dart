@@ -6,6 +6,10 @@ import 'package:zhihu/utils/screen_util.dart';
 import 'answer_bar.dart';
 
 class AnswerToQuestion extends StatefulWidget {
+ String arguments ;
+
+ AnswerToQuestion({this.arguments});
+
   @override
   _AnswerToQuestionState createState() => _AnswerToQuestionState();
 }
@@ -18,8 +22,8 @@ class _AnswerToQuestionState extends State<AnswerToQuestion> {
 
   @override
   Widget build(BuildContext context) {
-//    print(ModalRoute.of(context).settings.arguments);
     return Container(
+
       child: Scaffold(
         body: SafeArea(
           child: Column(
@@ -49,7 +53,7 @@ class _AnswerToQuestionState extends State<AnswerToQuestion> {
                       decoration: BoxDecoration(
                           color: Color(0xffebf5ff),
                           borderRadius: BorderRadius.circular(10)),
-                      child: Text("123"),
+                      child: Text(widget.arguments),
                     ),
                     Expanded(
                       child: SizedBox(),
