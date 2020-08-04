@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
+import 'package:jpush_flutter/jpush_flutter.dart';
 import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/config/router_config.dart';
 import 'package:zhihu/route/on_generate_route.dart';
@@ -15,6 +17,47 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  final JPush jpush = JPush();
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    initPlatformState();  /*极光插件平台初始化*/
+  }
+
+  Future<void> initPlatformState() async {
+
+    jpush.setup(
+      appKey: "ec2c435ccf22f2e2b42486a5",
+      channel: "theChannel",
+      production: false,
+      debug: false, // 设置是否打印 debug 日志
+    );
+
+
+    String platformVersion;
+
+    try{
+      jpush.addEventHandler(
+        // 接收通知回调方法。
+          onReceiveNotification:(Map<String, dynamic> event) async{
+            print(">>>>>>>>>>>>>>>>>flutter 接收到推送: $event");
+          },
+        onReceiveMessage: (Map<String, dynamic> message) async {
+          print("flutter onReceiveMessage: $message");
+        },
+      );
+    }on PlatformException{
+      print(">>>>>>>>>>>>>>>>>flutter 平台版本获取失败，请检查！");
+    }
+
+    jpush.getRegistrationID().then((rid) { });
+  }
+
   @override
   Widget build(BuildContext context) {
 

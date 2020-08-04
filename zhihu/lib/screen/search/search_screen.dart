@@ -4,7 +4,6 @@ import 'package:zhihu/components/nav_bar.dart';
 import 'package:zhihu/screen/search/search_hot_card.dart';
 import 'package:zhihu/screen/search/search_page_top_bar.dart';
 import 'package:zhihu/screen/search/search_tab_header_delegate.dart';
-import 'package:zhihu/utils/screen_util.dart';
 
 class SearchScreen extends StatefulWidget {
   @override
@@ -20,60 +19,66 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.initialize(context);
     return Container(
       child: Scaffold(
         body: SafeArea(
-            child: Column(
-          children: [
-            SearchPageTopBar(),
-            Expanded(
-              child: CustomScrollView(
-                slivers: <Widget>[
-                  SliverToBoxAdapter(
-                      child: SizedBox(
-                    height: 30,
-                  )),
-                  SliverGrid(
-                      delegate: SliverChildBuilderDelegate(
-                          (BuildContext context, int index) {
-                        return SearchHotCard(index);
-                      }, childCount: 8),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, childAspectRatio: 4)),
-                  SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                          (BuildContext context, int index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                          border: Border(
-                              bottom: BorderSide(color: Color(0xffcdcaca)))),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 30, bottom: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "更多热搜内容",
-                              style: TextStyle(
-                                  fontSize: 14, color: Color(0xff3891df)),
-                            ),
-                            Icon(
-                              Icons.chevron_right,
-                              color: Color(0xff3891df),
-                              size: 14,
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  }, childCount: 1))
-                ],
+          child: CustomScrollView(
+            slivers: [
+              SliverPersistentHeader(
+                pinned: true,
+                floating: true,
+                delegate: SearchTabHeaderDelegate(SearchPageTopBar()),
               ),
-            )
-          ],
-        )),
+              SliverList(
+                delegate: SliverChildBuilderDelegate((ctx,index){
+                  return SizedBox(height: 30,);
+                },childCount: 1),
+              ),
+
+              SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                    return SearchHotCard(index);
+                  }, childCount: 8),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 4
+                  )),
+              SliverList(
+                  delegate:SliverChildBuilderDelegate(
+                      (BuildContext context, int index){
+                        return
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border(bottom:BorderSide(color: Color(0xffcdcaca)) )
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 30,bottom: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+
+                                children: [
+                                  Text("更多热搜内容",style: TextStyle(
+                                      fontSize: 14,
+                                      color: Color(0xff3891df)
+                                  ),),
+                                  Icon(Icons.chevron_right, color: Color(0xff3891df),size: 14,)
+                                ],
+
+                              ),
+                            ),
+                          );
+                      },
+                    childCount: 1
+                  )
+              )
+
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+

@@ -50,6 +50,7 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
           ),
         ),
         Container(
+//          height: 58.rpx,
           padding:  EdgeInsets.only(top: 20,left: 40.rpx,right: 40.rpx),
           decoration: BoxDecoration(
               color: Colors.white,
@@ -62,7 +63,7 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
               unselectedLabelColor: Color(0xffa4a4a4),
               unselectedLabelStyle: TextStyle(fontSize: 14),
               labelPadding:
-               EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 12),
+               EdgeInsets.only(bottom: 12.rpx),
               controller: TabController(length: 7, vsync: this),
               onTap: (int index) {},
               tabs: <Widget>[
