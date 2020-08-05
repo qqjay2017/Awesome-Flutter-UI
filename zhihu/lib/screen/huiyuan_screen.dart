@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zhihu/components/nav_bar.dart';
+import 'package:zhihu/utils/package_info_util.dart';
 import 'package:zhihu/utils/prefs_util.dart';
 import 'package:barcode_scan/barcode_scan.dart';
+
 class HuiyuanScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -18,24 +20,37 @@ class _HomeScreenState extends State<HuiyuanScreen> {
               child: Column(
                 children: [
                   FlatButton(
-                      onPressed: () async{
-                        PrefsUtil.getInstance().then((prefs) {
-
-                      prefs.setString("name", "huiyuan");
-                        });
-                      },
-                      child: Text("存储值"),
-                    ),
+                    onPressed: () async {
+                      PrefsUtil.getInstance().then((prefs) {
+                        prefs.setString("name", "huiyuan");
+                      });
+                    },
+                    child: Text("存储值"),
+                  ),
                   FlatButton(
-                    onPressed: ()async{
+                    onPressed: () async {
                       var result = await BarcodeScanner.scan();
 
-                      print(result.type); // The result type (barcode, cancelled, failed)
+                      print(result
+                          .type); // The result type (barcode, cancelled, failed)
                       print(result.rawContent); // The barcode content
                       print(result.format); // The barcode format (as enum)
-                      print(result.formatNote); // If a unknown format was scanned this field contains a note
+                      print(result
+                          .formatNote); // If a unknown format was scanned this field contains a note
                     },
                     child: Text('扫码'),
+                  ),
+                  FlatButton(
+                    onPressed: () {
+                      PackageInfoUtil.packageInfo.then(
+                              (info) {
+                            print('appName:'+info.appName);
+                            print('packageName:'+info.packageName);
+                            print('version:'+info.version);
+                            print('buildNumber:'+info.buildNumber);
+                          });
+                    },
+                    child: Text("PackageInfoUtil"),
                   )
                 ],
               ),

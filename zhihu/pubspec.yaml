@@ -32,6 +32,7 @@ dependencies:
   jpush_flutter: ^0.5.5
   shared_preferences: ^0.5.8
   barcode_scan: ^3.0.1
+  package_info: ^0.4.1
 
 
 dev_dependencies:
