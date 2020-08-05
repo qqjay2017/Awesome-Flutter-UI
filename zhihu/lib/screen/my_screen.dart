@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:zhihu/components/nav_bar.dart';
+import 'package:zhihu/utils/prefs_util.dart';
 
 class MyScreen extends StatefulWidget {
   @override
@@ -17,9 +18,17 @@ class _HomeScreenState extends State<MyScreen> {
           body: Column(
             children: [
               InkWell(
+
                 child: Column(
                   children: [
-                    Text("wodoeoeoeeeee"),
+                    FlatButton(onPressed: (){
+
+                        PrefsUtil.getInstance().then((prefs) {
+                        var name =   prefs.getString("name");
+                        print(name);
+                        });
+
+                    }, child: Text("获取值")),
                   ],
                 ),
               )

@@ -41,5 +41,10 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+	<!-- 扫码的 -->
+        <key>NSCameraUsageDescription</key>
+        <string>Camera permission is required for barcode scanning.</string>
+
 </dict>
 </plist>

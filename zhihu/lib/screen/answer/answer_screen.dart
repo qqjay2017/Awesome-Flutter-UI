@@ -8,7 +8,7 @@ import 'answer_bar.dart';
 class AnswerToQuestion extends StatefulWidget {
  String arguments ;
 
- AnswerToQuestion({this.arguments});
+ AnswerToQuestion(this.arguments);
 
   @override
   _AnswerToQuestionState createState() => _AnswerToQuestionState();

@@ -6,7 +6,7 @@ import 'package:zhihu/screen/search/search_screen.dart';
 final routes = {
   '/home': (context, {arguments}) => RootWidget(),
   '/search': (context, {arguments}) => SearchScreen(),
-  '/question': (context, {arguments}) => AnswerToQuestion(arguments:arguments)
+  '/question': (context, {arguments}) => AnswerToQuestion( "1234")
 };
 
 var onGenerateRoute = (RouteSettings settings) {
