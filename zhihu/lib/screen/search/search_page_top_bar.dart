@@ -18,11 +18,12 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
     return Column(
       children: [
         Container(
+          height: 96.rpx,
           color: Colors.white,
           child: Padding(
-            padding:  EdgeInsets.only(top:18.rpx,left: 16.rpx, right: 16.rpx),
+            padding:  EdgeInsets.all(16.rpx),
             child: Container(
-              height: 58.rpx,
+             height: 60.rpx,
               decoration: BoxDecoration(
                   color: Color(0xffe6e6e6),
                   borderRadius: BorderRadius.circular(10)),
@@ -50,8 +51,8 @@ class _SearchPageTopBarState extends State<SearchPageTopBar>
           ),
         ),
         Container(
-//          height: 58.rpx,
-          padding:  EdgeInsets.only(top: 20,left: 40.rpx,right: 40.rpx),
+          height: 74.rpx,
+//          padding:  EdgeInsets.only(top: 20,left: 40.rpx,right: 40.rpx),
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border(bottom: BorderSide(color: Color(0XFFdad8d8)))),

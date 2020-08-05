@@ -42,6 +42,13 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
 
     try{
+
+      jpush.applyPushAuthority( NotificationSettingsIOS(
+          sound: true,
+          alert: true,
+          badge: true));
+
+
       jpush.addEventHandler(
         // 接收通知回调方法。
           onReceiveNotification:(Map<String, dynamic> event) async{

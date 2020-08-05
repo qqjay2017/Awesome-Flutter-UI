@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:zhihu/extens/int_fit.dart';
+
 class SearchTabHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Widget tabBar;
 
@@ -15,11 +17,11 @@ class SearchTabHeaderDelegate extends SliverPersistentHeaderDelegate {
   /// 偏移的尺寸
   @override
   // TODO: implement maxExtent
-  double get maxExtent => 120;
+  double get maxExtent => 170.rpx;
 
   @override
   // TODO: implement minExtent
-  double get minExtent => 120;
+  double get minExtent => 170.rpx;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
